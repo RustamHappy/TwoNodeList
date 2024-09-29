@@ -4,68 +4,75 @@
 
 using namespace std;
 
-struct Node 
+struct Node
 {
 	string FIO;
-	struct address
+	struct Address
 	{
 		string street;
-		int numHome;
-		int numApart;
+		string numHome;
+		string numApart;
 	};
-	int numberPhone;
-	int balance;
+	Address address;
+	string numberPhone;
+	string balance;
 	Node* next;
 	Node* pred;
 };
 
-void init(Node*& head);
+void init(Node*& head, Node*& tail);
 
-void PredBeg(Node*& head, string FIO, string street, int numHome, int numApart, int numberPhone, int balance);
+void appendInBegin(Node*& head, Node*& tail);
 
-void NextBeg(Node* head, string FIO, string street, int numHome, int numApart, int numberPhone, int balance);
+void PredBeg(Node*& head, Node* tail, string FIO, string street, string numHome, string numApart, string numberPhone, string balance);
 
-void PredEnd(Node* head, string FIO, string street, int numHome, int numApart, int numberPhone, int balance);
+void NextBeg(Node* head, Node* tail, string FIO, string street, string numHome, string numApart, string numberPhone, string balance);
 
-void NextEnd(Node* head, string FIO, string street, int numHome, int numApart, int numberPhone, int balance);
+void PredEnd(Node* head, Node* tail, string FIO, string street, string numHome, string numApart, string numberPhone, string balance);
 
-
-
-void DelAll(Node*& head);
-
-void DelHead(Node*& head);
-
-void DelPredFindElem(Node*& head);
-
-void DelNextFindElem(Node*& head);
-
-void DelPredElem(Node* temp);
-
-void DelNextElem(Node* temp);
-
-void DelAllElem(Node*& head);
-
-
-Node* Search(Node* head);
-
-void Print(Node* head);
-
-bool isEmpty(Node* head);
+void NextEnd(Node* head, Node*& tail, string FIO, string street, string numHome, string numApart, string numberPhone, string balance);
 
 
 
-void SortFIO(Node*& head);
+void DelAll(Node*& head, Node*& tail);
 
-void DelLowBalance(Node*& head);
+void DelHead(Node*& head, Node* tail);
 
-void PrintTwoMorePhone(Node* head);
+void DelTail(Node* head, Node*& tail);
 
-void SortNumberPhone(Node*& head);
+void DelPredFindElem(Node*& head, Node* tail);
 
-void FindPhoneNetwork(Node*& head);
+void DelNextFindElem(Node*& head, Node* tail);
 
-void SortBalance(Node*& head);
+void DelPredElem(Node*& head, Node* tail);
 
-void PrintLessBalance(Node* head, int balance);
+void DelNextElem(Node*& head, Node* tail);
 
-void PrintTwoMorePhoneAndPhoneNetwork(Node* head);
+void DelAllElem(Node*& head, Node* tail);
+
+
+Node* Search(Node*& head, Node* tail);
+
+void Print(Node* head, Node* tail);
+
+bool isEmpty(Node*& head, Node* tail);
+
+void swap(Node*& a, Node*& b);
+
+
+
+void SortFIO(Node*& head, Node*& tail);
+
+void DelLowBalance(Node*& head, Node* tail);
+
+void PrintTwoMorePhone(Node*& head, Node* tail);
+
+void SortNumberPhone(Node*& head, Node* tail);
+
+void FindPhoneNetwork(Node*& head, Node* tail);
+
+void SortBalance(Node*& head, Node* tail);
+
+void PrintLessBalance(Node*& head, Node* tail, int balance);
+
+void PrintTwoMorePhoneAndPhoneNetwork(Node*& head, Node* tail);
